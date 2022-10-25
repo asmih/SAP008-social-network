@@ -17,9 +17,10 @@ export const feedFunction = () => {
     <div class='inputs-source'>
       <input type='text' class='author input-space ipt-general' id="inputAuthor" placeholder='Autora' />
       <input type='text' class='book input-space ipt-general' id="inputBook" placeholder='Livro'/>
+      <button type='submit' class='button-publish btnFeed'>Publicar 
+      </button>
     </div>
-    <button type='submit' class='button-publish btnFeed'>Publicar 
-    </button>
+    
   </div>
   <div class='logout'>
     <button type='submit' class='button-logout btnFeed'>Sair
