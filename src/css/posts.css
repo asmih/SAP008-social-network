@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&family=Roboto&display=swap");
 
+.post-style {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
 
 .eachPost{
   display: flex;
   margin-left: 1.1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 50.5rem;
   align-items: center;
   background-color: #D7ECEB;
   border-radius: 2rem;
+  padding: 2rem;
 }
 
 .infos-user {
@@ -67,3 +72,27 @@
     padding-top: 0.5rem;
     gap: 9px;
  }
+
+ @media screen and (min-width: 320px) and (max-width: 767px) {
+  
+  .eachPost{
+    width: 28.5rem;
+  }
+
+  .name-user-log, .quote-posted, .author-name-log {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+  }
+
+  .quote-posted {
+    display: flex;
+    font-size: 12px;
+    margin-left: 2rem;
+
+ }
+
+ .author-name-log {
+    margin-left: 5rem;
+ }
+
+}
