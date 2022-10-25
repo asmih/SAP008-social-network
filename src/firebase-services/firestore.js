@@ -1,5 +1,5 @@
-import { collection, addDoc, doc, setDoc, getDocs, query, orderBy, Timestamp} from "./exports.js";
-import { db } from "./firebase-config.js";
+import { collection, addDoc, doc, setDoc, getDocs, query, orderBy, Timestamp, deleteDoc, updateDoc } from "./exports.js";
+import { db, auth } from "./firebase-config.js";
 import { current } from "./auth.js";
 
 
@@ -23,5 +23,9 @@ export async function gettingPost() {
   const queryResult = query(collection(db, 'post'), orderBy('date', 'desc'))
  const gotDoc = await getDocs(queryResult)
  return gotDoc
+}
+
+export async function deletingPost(userId) {
+  await deleteDoc(collection(db, 'post', userId));
 }
 

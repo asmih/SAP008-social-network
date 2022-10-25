@@ -5,8 +5,7 @@
   display: flex;
   margin-left: 1.1rem;
   margin-top: 2rem;
-  width: 50rem;
-  height: 20rem;
+  width: 50.5rem;
   align-items: center;
   background-color: #D7ECEB;
   border-radius: 2rem;
@@ -19,6 +18,7 @@
 
 .img-user-log {
   border-radius: 3rem;
+  margin-top: 1rem;
 }
 .name-user-log, .quote-posted, .author-name-log {
   font-family: "Poppins", sans-serif;
@@ -39,7 +39,7 @@
   font-weight: bold;
   font-size: 13px;
   padding-top: 1rem;
-  margin-left: 22rem;
+  margin-left: 21rem;
   border-bottom: 2px solid #F2AE2D;
 }
 
@@ -51,4 +51,19 @@
  .user-reactions {
   display: block;
 
+ }
+
+ .updl {
+  padding-left: 0.2rem;
+  padding-top: 0.4rem;
+  width: 25px;
+ }
+
+
+ .user-reactions{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 4rem;
+    padding-top: 0.5rem;
+    gap: 9px;
  }
