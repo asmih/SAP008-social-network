@@ -2,6 +2,8 @@ import { userLogOut } from '../firebase-services/auth.js';
 import { creatingPost, gettingPost } from '../firebase-services/firestore.js';
 import { postFunction } from './posts.js';
 
+
+
 export const feedFunction = () => {
   const containerFeed = document.createElement("section");
   
@@ -10,7 +12,6 @@ export const feedFunction = () => {
   
   <section class='feed-page'>
     <div class='form-feed'>
-      <div class="img-user"></div>
       <div class='inputs-feed'>
       <textarea class='question-feed ipt-general' type='text' id="inputQuote" wrap="harder" placeholder='Qual trecho você gostaria de compartilhar hoje?' /></textarea>
     <div class='inputs-source'>
