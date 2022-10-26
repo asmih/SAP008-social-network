@@ -25,6 +25,7 @@ describe('loginEmailPassword', () => {
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });
+console.log("tchau")
 
 
 
