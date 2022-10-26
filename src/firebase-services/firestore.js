@@ -4,7 +4,10 @@ import { current } from "./auth.js";
 
 
 export function creatingPost(text, author, book) {
-  addDoc(collection(db, 'post'), {
+  console.log(text)
+  console.log(author)
+  console.log(book)
+  return addDoc(collection(db, 'post'), {
     displayName: current().displayName,
     photoURL: current().photoURL,
     post: '❝'+text+'❞',
@@ -26,6 +29,6 @@ export async function gettingPost() {
 }
 
 export async function deletingPost(userId) {
-  await deleteDoc(collection(db, 'post', userId));
+  await deleteDoc(doc(db, 'post', userId));
 }
 

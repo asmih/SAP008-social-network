@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 .post-style {
   margin-top: 1rem;
@@ -62,6 +63,7 @@
   padding-left: 0.2rem;
   padding-top: 0.4rem;
   width: 25px;
+  cursor: pointer;
  }
 
 
@@ -72,6 +74,50 @@
     padding-top: 0.5rem;
     gap: 9px;
  }
+
+ .confirm-paragraph {
+  padding-top: 2rem;
+  margin-left: 0.5rem;
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+ }
+
+ .button-dlt {
+  background-color: #F2AE2D;
+ }
+ .button-dlt:hover {
+  background-color: #d3ae6a;
+ }
+
+ .button-dlt, .button-ccl {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 1rem;
+  width: 30%;
+  height: 20%;
+ }
+
+ .button-ccl {
+  background-color: rgba(79, 86, 86, 0.219);
+ }
+ .button-ccl:hover{
+  background-color: rgba(135, 141, 141, 0.219);
+ }
+
+ .confirm-style {
+  width: 20rem;
+  height: 8rem;
+  background-color: #FFF;
+  border-radius: 2rem;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+
+ }
+
 
  @media screen and (min-width: 320px) and (max-width: 767px) {
   
