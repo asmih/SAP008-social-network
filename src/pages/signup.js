@@ -4,7 +4,7 @@ export const signUpFunction = () => {
   const containerSignUp = document.createElement('section');
   console.log(containerSignUp);
   const templateSignUp = `
-  <section class='home-page' id='sign-up'>
+  <section class='signup-page' id='sign-up'>
       <div class='background-home'> 
         <p class='background-home quote'>
           “Sempre fomos o que os homens disseram que nós éramos. Agora somos nós

@@ -114,7 +114,7 @@ body {
 
 @media screen and (min-width: 1201px) {
 
-  .home-page {
+  .home-page, .signup-page {
     display: flex;
     flex-direction: row;
   }
@@ -164,7 +164,7 @@ body {
 
 @media screen and (min-width: 1024px) and (max-width: 1200px)  {
 
-  .home-page {
+  .home-page, .signup-page {
     display: flex;
     flex-direction: row;
   }
@@ -222,9 +222,10 @@ body {
 
 @media screen and (min-width: 320px) and (max-width: 1023px) {
 
-    body {
+    .home-page, .signup-page {
       background-image: url(../img/background.png);
       background-size: contain;
+      height: 100vh;
     }
   
     .input-login {
@@ -297,11 +298,6 @@ body {
 
   @media screen and (min-width: 320px) and (max-width: 1023px) {
 
-    body {
-      background-image: url(../img/background.png);
-      background-size: contain;
-    }
-  
     .input-signup {
       width: 15rem;
       height: 1.5rem;
@@ -331,7 +327,7 @@ body {
 
   @media screen and (min-width: 1024px) and (max-width: 1200px)  {
 
-    .home-page {
+    .home-page, .signup-page {
       display: flex;
       flex-direction: row;
     }
