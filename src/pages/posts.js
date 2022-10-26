@@ -1,4 +1,5 @@
 import { creatingPost, gettingPost, deletingPost } from "../firebase-services/firestore.js";
+import { auth } from "../firebase-services/firebase-config.js";
 
 export function postFunction(posts) {
   
@@ -23,7 +24,7 @@ export function postFunction(posts) {
 
 }
 
-function deleteConfirm(postId){
+export function deleteConfirm(postId){
   const confirmTemplate = document.createElement('div');
   confirmTemplate.classList.add("confirm-style");
 
@@ -54,18 +55,22 @@ function deleteConfirm(postId){
 }
 
 export function creatingPostTemplate(post){
-  console.log(post)
-  console.log(post.data())
+  
+  
   const postData = post.data();
-  const templatePosts = `
+  let templatePosts = `
   <div class="eachPost">
     <div class="infos-user">
       <img class="img-user-log" src=${postData.photoURL} referrerpolicy="no-referrer">
       <h3 class="name-user-log">${postData.displayName}</h3>
       <time class="date-hour">${postData.date}</time>
+      `
+    const secondTemplatePosts = `
       <img src='img\\edit.svg' class="editsvg updl" id="buttonEdit">
-      <img src='img\\trash.svg' class="deletesvg updl" id="buttonDel">
-    </div>
+      <img src='img\\trash.svg' class="deletesvg updl" id="buttonDel"> `
+    
+    const thirdTemplatePosts = `
+      </div>
     <div class="post-infos">
       <p class="quote-posted">${postData.post}</p>
       <p class="author-name-log">${postData.author}, ${postData.book}</p>    
@@ -77,8 +82,11 @@ export function creatingPostTemplate(post){
       <img class="want-read" src='img\\bookmark.svg' class='reactions toread'>
   </div>
   
-
 `;
+ if (postData.userId == auth.currentUser.uid) templatePosts = templatePosts.concat('', secondTemplatePosts);
+
+ templatePosts = templatePosts.concat('', thirdTemplatePosts);
+
 
 return templatePosts;
 } 
