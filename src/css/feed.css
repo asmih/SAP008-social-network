@@ -14,6 +14,7 @@ body{
 .form-feed {
   margin: auto;
   margin-top: 1rem;
+  margin-bottom: 4rem;
   background-color: #fff;
   width: 52rem;
   height: 20rem;
@@ -25,7 +26,7 @@ body{
 .question-feed {
   width: 65%;
   height: 70%;
-  margin-left: 15rem;
+  margin-left: 12rem;
   background-color: #EDE2E2;
   border: none;
   border-radius: 2rem;
@@ -91,7 +92,6 @@ body{
   margin-left: 5rem;
   margin-top: 1rem;
   width: 15%;
-  height: 15%;
 }
 
 
@@ -125,7 +125,7 @@ body{
     width: 28.5rem;
     height: 10rem;
     padding: 1rem;
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
 
   .author, .book {

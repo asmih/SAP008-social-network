@@ -21,12 +21,13 @@ export const feedFunction = () => {
           <button type='submit' class='button-publish btnFeed'>Publicar 
           </button>
         </div>
+        <div class='logout'>
+          <button type='submit' class='button-logout btnFeed'>Sair
+          </button>
+        </div>
       </div>
     </div>
-    <div class='logout'>
-      <button type='submit' class='button-logout btnFeed'>Sair
-      </button>
-    </div>
+    
   </section>
   
   <section class="container-post" id="containerPost">
@@ -42,14 +43,14 @@ export const feedFunction = () => {
     });
   });
 
-  const containerPost = containerFeed.querySelector('#containerPost');
+  const containerPost = containerFeed.querySelector("#containerPost");
   containerPost.appendChild(posts);
 
-  const btnPublish = containerFeed.querySelector('.button-publish');
-  btnPublish.addEventListener('click', (e) => {
-    const iptAuthor = containerFeed.querySelector('#inputAuthor').value;
-    const iptBook = containerFeed.querySelector('#inputBook').value;
-    const iptQuote = containerFeed.querySelector('#inputQuote').value;
+  const btnPublish = containerFeed.querySelector(".button-publish");
+  btnPublish.addEventListener("click", (e) => {
+    const iptAuthor = containerFeed.querySelector("#inputAuthor").value;
+    const iptBook = containerFeed.querySelector("#inputBook").value;
+    const iptQuote = containerFeed.querySelector("#inputQuote").value;
     e.preventDefault;
     creatingPost(iptQuote, iptAuthor, iptBook).then((post) => {
       getDoc(post).then((postSnap) => {
@@ -67,9 +68,8 @@ export const feedFunction = () => {
     })
   });
 
-  console.log(posts)
+  console.log(posts);
   postFunction(posts);
 
   return containerFeed;
 };
-
