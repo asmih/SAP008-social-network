@@ -1,4 +1,4 @@
-import { creatingPost, gettingPost, deletingPost, editingPost } from "../firebase-services/firestore.js";
+import { gettingPost, deletingPost, editingPost } from "../firebase-services/firestore.js";
 import { auth } from "../firebase-services/firebase-config.js";
 
 export function postFunction(posts) {

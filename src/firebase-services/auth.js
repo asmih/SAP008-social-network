@@ -7,7 +7,6 @@ import { signOut, signInWithPopup,
 import { auth } from '../firebase-services/firebase-config.js';
 
   onAuthStateChanged(auth, (user) => {
-    console.log(user);
     if (user)
       window.location.hash = '#feed';
   }) 

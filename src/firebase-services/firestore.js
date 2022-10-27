@@ -1,12 +1,9 @@
-import { collection, addDoc, doc, setDoc, getDocs, query, orderBy, Timestamp, deleteDoc, updateDoc } from "./exports.js";
-import { db, auth } from "./firebase-config.js";
+import { collection, addDoc, doc, getDocs, query, orderBy, deleteDoc, updateDoc } from "./exports.js";
+import { db } from "./firebase-config.js";
 import { current } from "./auth.js";
 
 
 export function creatingPost(text, author, book) {
-  console.log(text)
-  console.log(author)
-  console.log(book)
   return addDoc(collection(db, 'post'), {
     displayName: current().displayName,
     photoURL: current().photoURL,
@@ -31,6 +28,7 @@ export async function gettingPost() {
 export async function deletingPost(postId) {
   await deleteDoc(doc(db, 'post', postId));
 }
+
 
 export async function editingPost(postId, post) {
   await updateDoc(doc(db, 'post', postId), post);
