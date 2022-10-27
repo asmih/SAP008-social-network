@@ -2,7 +2,6 @@ import { createNewUser } from '../firebase-services/auth.js';
 
 export const signUpFunction = () => {
   const containerSignUp = document.createElement('section');
-  console.log(containerSignUp);
   const templateSignUp = `
   <section class='signup-page' id='sign-up'>
       <div class='background-home'> 

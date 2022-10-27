@@ -9,4 +9,4 @@
   export const GoogleAuthProvider = jest.fn();
   export const signOut = jest.fn();
   export const getFirestore = jest.fn();
-  console.log("oi")
+  
