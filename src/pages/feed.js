@@ -1,5 +1,5 @@
 import { userLogOut } from '../firebase-services/auth.js';
-import { creatingPost, gettingPost, deletingPost } from '../firebase-services/firestore.js';
+import { creatingPost } from '../firebase-services/firestore.js';
 import { postFunction, creatingPostTemplate, deleteConfirm } from './posts.js';
 import { getDoc } from '../firebase-services/exports.js';
 
@@ -59,7 +59,6 @@ export const feedFunction = () => {
       newPost.innerHTML = creatingPostTemplate(postSnap)
       newPost.querySelector('.deletesvg').addEventListener('click', (event) => {
         const postId = event.target.parentNode.parentNode.parentNode.id
-        console.log(event.target.parentNode.parentNode.parentNode)
         document.body.appendChild(deleteConfirm(postId))
       })
       posts.insertBefore(newPost, posts.firstChild)
