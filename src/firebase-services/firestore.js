@@ -28,7 +28,14 @@ export async function gettingPost() {
  return gotDoc
 }
 
-export async function deletingPost(userId) {
-  await deleteDoc(doc(db, 'post', userId));
+export async function deletingPost(postId) {
+  await deleteDoc(doc(db, 'post', postId));
 }
 
+export async function editingPost(postId, newPost) {
+  await updateDoc(doc(db, 'post', postId), newPost);
+}
+
+// export async function editingPost(idPost, newPost) {
+//   await updateDoc(doc(db, "post", postId), { text: newPost })
+// }
