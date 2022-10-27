@@ -68,7 +68,6 @@ export const feedFunction = () => {
     })
   });
 
-  console.log(posts);
   postFunction(posts);
 
   return containerFeed;
