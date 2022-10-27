@@ -1,11 +1,8 @@
-import { userLogOut } from "../firebase-services/auth.js";
-import {
-  creatingPost,
-  gettingPost,
-  deletingPost,
-} from "../firebase-services/firestore.js";
-import { postFunction, creatingPostTemplate } from "./posts.js";
-import { getDoc } from "../firebase-services/exports.js";
+import { userLogOut } from '../firebase-services/auth.js';
+import { creatingPost, gettingPost, deletingPost } from '../firebase-services/firestore.js';
+import { postFunction, creatingPostTemplate, deleteConfirm } from './posts.js';
+import { getDoc } from '../firebase-services/exports.js';
+
 
 export const feedFunction = () => {
   const containerFeed = document.createElement("section");
@@ -57,11 +54,18 @@ export const feedFunction = () => {
     e.preventDefault;
     creatingPost(iptQuote, iptAuthor, iptBook).then((post) => {
       getDoc(post).then((postSnap) => {
-        const newPost = document.createElement("div");
-        newPost.innerHTML = creatingPostTemplate(postSnap);
-        posts.insertBefore(newPost, posts.firstChild);
-      });
-    });
+      const newPost = document.createElement('div');
+      newPost.id = postSnap.id;
+      newPost.innerHTML = creatingPostTemplate(postSnap)
+      newPost.querySelector('.deletesvg').addEventListener('click', (event) => {
+        const postId = event.target.parentNode.parentNode.parentNode.id
+        console.log(event.target.parentNode.parentNode.parentNode)
+        document.body.appendChild(deleteConfirm(postId))
+      })
+      posts.insertBefore(newPost, posts.firstChild)
+      })
+      
+    })
   });
 
   console.log(posts);
