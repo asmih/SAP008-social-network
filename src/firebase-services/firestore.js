@@ -4,9 +4,6 @@ import { current } from "./auth.js";
 
 
 export function creatingPost(text, author, book) {
-  console.log(text)
-  console.log(author)
-  console.log(book)
   return addDoc(collection(db, 'post'), {
     displayName: current().displayName,
     photoURL: current().photoURL,

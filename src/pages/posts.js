@@ -8,6 +8,7 @@ export function postFunction(posts) {
     for (const post of docs.docs) {
       const postsCreating = document.createElement("div");
       postsCreating.id = post.id
+
       const templatePosts = creatingPostTemplate(post);
       postsCreating.innerHTML = templatePosts;
       posts.appendChild(postsCreating);
@@ -30,6 +31,7 @@ export function deleteConfirm(postId){
 
   
   const templateDel = `
+  
   <p class="confirm-paragraph">Tem certeza que deseja deletar seu post?</p>
     <button class="button-dlt" id="buttonDelete">Deletar</button>
     <button class="button-ccl" id="cancelConf">Cancelar</button>
@@ -61,9 +63,10 @@ export function creatingPostTemplate(post){
   let templatePosts = `
   <div class="eachPost">
     <div class="infos-user">
+      <time class="date-hour">${postData.date}</time>  
       <img class="img-user-log" src=${postData.photoURL} referrerpolicy="no-referrer">
       <h3 class="name-user-log">${postData.displayName}</h3>
-      <time class="date-hour">${postData.date}</time>
+
       `
     const secondTemplatePosts = `
       <img src='img\\edit.svg' class="editsvg updl" id="buttonEdit">
@@ -73,7 +76,7 @@ export function creatingPostTemplate(post){
       </div>
     <div class="post-infos">
       <p class="quote-posted">${postData.post}</p>
-      <p class="author-name-log">${postData.author}, ${postData.book}</p>    
+      <p class="author-name-log">${postData.author}, ${postData.book}</p>  
     </div>  
   </div>
   <div class="user-reactions">
@@ -83,6 +86,7 @@ export function creatingPostTemplate(post){
   </div>
   
 `;
+
  if (postData.userId == auth.currentUser.uid) templatePosts = templatePosts.concat('', secondTemplatePosts);
 
  templatePosts = templatePosts.concat('', thirdTemplatePosts);

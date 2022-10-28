@@ -24,9 +24,9 @@ body{
 }
 
 .question-feed {
-  width: 65%;
+  width: 80%;
   height: 70%;
-  margin-left: 12rem;
+  margin-left: 6.2rem;
   background-color: #EDE2E2;
   border: none;
   border-radius: 2rem;
@@ -49,21 +49,20 @@ body{
   flex-direction: row;
   margin-top: 0.6rem;
   gap: 10px;
-  margin-left: 17rem;
+  margin-left: 7rem;
 }
 
 .input-space {
   margin: auto;
-  width: 20rem;
+  width: 18rem;
   height: 2rem;
 }
 
 
 .logout{
-    display: flex;
-    flex-direction: row;
     margin: 0.6rem;
 }
+
 
 .btnFeed {
   border-radius: 2rem;
@@ -81,17 +80,15 @@ body{
 .button-logout {
   display: flex;
   align-content: center;
-  margin-top: 0.5rem;
-  width: 4rem;
-  height: 1.6rem;
-  padding: .2rem 1.2rem;
-  margin-right: 3rem;
+  width: 10%;
+  height: 2rem;
+  padding: .2rem 1.6rem;
+  margin-right: 6rem;
 }
 
 .button-publish {
-  margin-left: 5rem;
-  margin-top: 1rem;
   width: 15%;
+  height: 2rem;
 }
 
 
