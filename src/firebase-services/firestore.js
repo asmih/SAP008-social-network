@@ -29,8 +29,9 @@ export async function deletingPost(postId) {
   await deleteDoc(doc(db, 'post', postId));
 }
 
-export async function editingPost(postId, editPost) {
-  await updateDoc(doc(db, 'post', postId), editPost);
+
+export async function editingPost(postId, post) {
+  await updateDoc(doc(db, 'post', postId), post);
 }
 
 // export async function editingPost(idPost, newPost) {
