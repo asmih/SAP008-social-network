@@ -151,7 +151,5 @@ export function creatingPostTemplate(post) {
 
  templatePosts = templatePosts.concat('', thirdTemplatePosts);
 
-  templatePosts = templatePosts.concat("", thirdTemplatePosts);
-
   return templatePosts;
 }
