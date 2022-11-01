@@ -53,9 +53,9 @@ export function editConfirm(postId, text, author, book) {
           <input type='text' class='book-updt edit-post' id="updtBook" value="${book}">
         </div>  
     <div class='buttons-updt'>
-          <button type='submit' class='button-update'>Atualizar 
+          <button type='submit' class='button-update buttons-post'>Atualizar 
           </button>
-          <button type='submit' class='button-update-cancel'>Cancelar 
+          <button type='submit' class='button-update-cancel buttons-post'>Cancelar 
           </button>
     </div> 
   `;
@@ -98,8 +98,8 @@ export function deleteConfirm(postId) {
   const templateDel = `
   
   <p class="confirm-paragraph">Tem certeza que deseja deletar seu post?</p>
-    <button class="button-dlt" id="buttonDelete">Deletar</button>
-    <button class="button-ccl" id="cancelConf">Cancelar</button>
+    <button class="button-dlt buttons-post" id="buttonDelete">Deletar</button>
+    <button class="button-ccl buttons-post" id="cancelConf">Cancelar</button>
    
   `;
   confirmTemplate.innerHTML = templateDel;
