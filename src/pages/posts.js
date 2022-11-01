@@ -43,20 +43,21 @@ export function postFunction(posts) {
 export function editConfirm(postId, text, author, book) {
   const confirmEditTemplate = document.createElement("div");
   confirmEditTemplate.classList.add("edit-style");
-  console.log(author)
 
   const templateEdit = `
-    <textarea class='edit-post-ipt'>
-      ${text}
-    </textarea>
-      <div class='inputs-edit'>
-        <input type='text' class='author-updt edit-post' id="updtAuthor" value="${author}">
-        <input type='text' class='book-updt edit-post' id="updtBook" value="${book}">
-        <button type='submit' class='button-update'>Atualizar 
-        </button>
-        <button type='submit' class='button-update-cancel'>Cancelar 
-        </button>
-      </div> 
+      <textarea class='edit-post-ipt'>
+        ${text}
+      </textarea>
+        <div class='inputs-edit-source'>
+          <input type='text' class='author-updt edit-post' id="updtAuthor" value="${author}">
+          <input type='text' class='book-updt edit-post' id="updtBook" value="${book}">
+        </div>  
+    <div class='buttons-updt'>
+          <button type='submit' class='button-update'>Atualizar 
+          </button>
+          <button type='submit' class='button-update-cancel'>Cancelar 
+          </button>
+    </div> 
   `;
   confirmEditTemplate.innerHTML = templateEdit;
 
