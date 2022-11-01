@@ -75,6 +75,7 @@
     gap: 9px;
  }
 
+
  .confirm-paragraph {
   padding-top: 2rem;
   margin-left: 0.5rem;
@@ -83,14 +84,15 @@
   font-family: 'Quicksand', sans-serif;
  }
 
- .button-dlt {
+
+ .button-dlt, .button-update {
   background-color: #F2AE2D;
  }
- .button-dlt:hover {
+ .button-dlt:hover, .button-update:hover {
   background-color: #d3ae6a;
  }
 
- .button-dlt, .button-ccl {
+ .button-dlt, .button-ccl, .button-update, .button-update-cancel {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   margin-left: 3.5rem;
@@ -101,10 +103,10 @@
   height: 20%;
  }
 
- .button-ccl {
+ .button-ccl, .button-update-cancel {
   background-color: rgba(79, 86, 86, 0.219);
  }
- .button-ccl:hover{
+ .button-ccl:hover, .button-update-cancel:hover{
   background-color: rgba(135, 141, 141, 0.219);
  }
 
@@ -121,8 +123,44 @@
 
  }
 
+ .edit-style {
+  justify-content: center;
+  background-color: #a8dedd;
+  width: 48rem;
+  height: 24rem;
+  position: fixed;
+  border-radius: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
 
 
+ .edit-post-ipt {
+  width: 46rem;
+  height: 10rem;
+  background-color: #EDE2E2;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.inputs-edit-source {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.6rem;
+  gap: 10px;
+}
+
+.author-updt, .book-updt {
+  background-color: #F2CC84;
+  border-radius: 0.5rem;
+  border: none;
+  width: 23rem;
+  height: 2rem;
+} 
 
  @media screen and (min-width: 320px) and (max-width: 767px) {
   
