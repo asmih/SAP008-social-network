@@ -3,7 +3,11 @@ import {
   deletingPost,
   editingPost,
 } from "../firebase-services/firestore.js";
-import { auth } from "../firebase-services/firebase-config.js";
+import { auth, db } from "../firebase-services/firebase-config.js";
+import {
+  doc,
+  getDoc,
+} from "../firebase-services/exports.js";
 
 export function postFunction(posts) {
   gettingPost().then((docs) => {
@@ -36,9 +40,20 @@ export function postFunction(posts) {
           editConfirm(postId, oldText, oldAuthorBook[0], oldAuthorBook[1])
         );
       });
+      const btnLike = [...posts.querySelectorAll('.liked')];
+      btnLike.forEach((element) => {
+        element.addEventListener('click',(event) => {
+          event.preventDefault()
+          const postId = event.target.parentNode.parentNode.id;
+          const docRef = getDoc(doc(db, 'post', postId))
+          console.log(docRef)
+        })
+      })
+
     });
   });
 }
+
 
 export function editConfirm(postId, text, author, book) {
   const confirmEditTemplate = document.createElement("div");
@@ -140,9 +155,10 @@ export function creatingPostTemplate(post) {
     </div>  
   </div>
   <div class="user-reactions">
-      <img clas="liked" src='img\\heart.svg' class='reactions liked'>
-      <img class="read" src='img\\book-open.svg' class='reactions read'>
-      <img class="want-read" src='img\\bookmark.svg' class='reactions toread'>
+      <img src='img\\heart.svg' class='reactions liked'>
+      <p>${postData.likes.length}</p>
+      <img src='img\\book-open.svg' class='reactions read'>
+      <img src='img\\bookmark.svg' class='reactions toread want-read'>
   </div>
   
 `;
