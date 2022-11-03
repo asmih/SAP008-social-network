@@ -33,7 +33,3 @@ export async function deletingPost(postId) {
 export async function editingPost(postId, post) {
   await updateDoc(doc(db, 'post', postId), post);
 }
-
-// export async function editingPost(idPost, newPost) {
-//   await updateDoc(doc(db, "post", postId), { text: newPost })
-// }

@@ -1,6 +1,7 @@
 // importamos la funcion que vamos a testear
 import { initWithGoogle, createNewUser, loginEmailPassword } from '../src/firebase-services/auth.js';
-import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, creatingPost, gettingPost, addDoc } from '../src/firebase-services/exports.js';
+import { creatingPost, gettingPost, deletingPost, editingPost } from '../src/firebase-services/firestore.js';
+import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, getDocs, updateDoc, deleteDoc } from '../src/firebase-services/exports.js';
 
 jest.mock('../src/firebase-services/exports.js');
 
@@ -21,7 +22,20 @@ describe('createNewUser', () => {
 describe('loginEmailPassword', () => {
   it('a função deve possibilitar fazer login com email e senha', () => {
     loginEmailPassword();
-    console.log (loginEmailPassword)
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('deletingPost', () => {
+  it('a função deve possibilitar deletar um post', () => {
+    deletingPost();
+    expect(deleteDoc).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('editingPost', () => {
+  it('a função deve possibilitar fazer atualização no post', () => {
+    editingPost();
+    expect(updateDoc).toHaveBeenCalledTimes(1);
   });
 });
