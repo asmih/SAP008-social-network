@@ -28,7 +28,7 @@ export const signUpFunction = () => {
    
   `;
   containerSignUp.innerHTML = templateSignUp;
-  
+
   const btnSignUp = containerSignUp.querySelector('#buttonSignUp');
 
   btnSignUp.addEventListener('click', () => {
@@ -42,9 +42,8 @@ export const signUpFunction = () => {
 
   const btnBackHome = containerSignUp.querySelector('#backAtHome');
   btnBackHome.addEventListener('click', () => {
-    location.assign(`/`)
+    window.location.assign('/');
   });
 
   return containerSignUp;
 };
-

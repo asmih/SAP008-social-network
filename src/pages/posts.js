@@ -21,24 +21,24 @@ export function postFunction(posts) {
       posts.appendChild(postsCreating);
     }
 
-    const btnDeleteArrays = [...posts.getElementsByClassName("deletesvg")];
+    const btnDeleteArrays = [...posts.getElementsByClassName('deletesvg')];
     btnDeleteArrays.forEach((element) => {
-      element.addEventListener("click", (event) => {
+      element.addEventListener('click', (event) => {
         const postId = event.target.parentNode.parentNode.parentNode.id;
         document.body.appendChild(deleteConfirm(postId));
       });
     });
 
-    const btnEditArrays = [...posts.getElementsByClassName("editsvg")];
+    const btnEditArrays = [...posts.getElementsByClassName('editsvg')];
     btnEditArrays.forEach((element) => {
-      element.addEventListener("click", (event) => {
+      element.addEventListener('click', (event) => {
         const postId = event.target.parentNode.parentNode.parentNode.id;
         const elementTarget = event.target.parentNode.parentNode;
-        const oldText = elementTarget.querySelector(".quote-posted").innerText;
-        const oldAuthorBook = elementTarget.querySelector(".author-name-log").innerText.split(",");
-          console.log(oldAuthorBook)
+        const oldText = elementTarget.querySelector('.quote-posted').innerText;
+        const oldAuthorBook = elementTarget.querySelector('.author-name-log').innerText.split(',');
+        console.log(oldAuthorBook);
         document.body.appendChild(
-          editConfirm(postId, oldText, oldAuthorBook[0], oldAuthorBook[1])
+          editConfirm(postId, oldText, oldAuthorBook[0], oldAuthorBook[1]),
         );
       });
       const btnLike = [...posts.querySelectorAll('.liked')];
@@ -70,8 +70,8 @@ export function postFunction(posts) {
 
 
 export function editConfirm(postId, text, author, book) {
-  const confirmEditTemplate = document.createElement("div");
-  confirmEditTemplate.classList.add("edit-style");
+  const confirmEditTemplate = document.createElement('div');
+  confirmEditTemplate.classList.add('edit-style');
 
   const templateEdit = `
       <textarea class='edit-post-ipt'>
@@ -90,30 +90,27 @@ export function editConfirm(postId, text, author, book) {
   `;
   confirmEditTemplate.innerHTML = templateEdit;
 
-  const btnEditModal = confirmEditTemplate.querySelector(".button-update");
-  btnEditModal.addEventListener("click", () => {
-    const updatedText = confirmEditTemplate.querySelector(".edit-post-ipt");
-    const updatedAuthor = confirmEditTemplate.querySelector(".author-updt");
-    const updatedBook = confirmEditTemplate.querySelector(".book-updt");
+  const btnEditModal = confirmEditTemplate.querySelector('.button-update');
+  btnEditModal.addEventListener('click', () => {
+    const updatedText = confirmEditTemplate.querySelector('.edit-post-ipt');
+    const updatedAuthor = confirmEditTemplate.querySelector('.author-updt');
+    const updatedBook = confirmEditTemplate.querySelector('.book-updt');
     const postData = {};
-    if (text !== updatedText)
-      postData.text = updatedText.value;
-    if (author !== updatedAuthor)
-      postData.author = updatedAuthor.value;
-    if (book !== updatedBook)
-      postData.book = updatedBook.value;
+    if (text !== updatedText) postData.text = updatedText.value;
+    if (author !== updatedAuthor) postData.author = updatedAuthor.value;
+    if (book !== updatedBook) postData.book = updatedBook.value;
     editingPost(postId, postData);
-    
-      const postDiv = document.getElementById(postId);
-      const quote = postDiv.querySelector('.quote-posted');
-      console.log(quote)
-      quote.innerHTML = updatedText.value;
-      postDiv.querySelector('.author-name-log').innerHTML = `${updatedAuthor.value}, ${updatedBook.value}`
+
+    const postDiv = document.getElementById(postId);
+    const quote = postDiv.querySelector('.quote-posted');
+    console.log(quote);
+    quote.innerHTML = updatedText.value;
+    postDiv.querySelector('.author-name-log').innerHTML = `${updatedAuthor.value}, ${updatedBook.value}`;
     confirmEditTemplate.remove();
   });
 
-  const btnCancelEditConfirm = confirmEditTemplate.querySelector(".button-update-cancel");
-  btnCancelEditConfirm.addEventListener("click", () => {
+  const btnCancelEditConfirm = confirmEditTemplate.querySelector('.button-update-cancel');
+  btnCancelEditConfirm.addEventListener('click', () => {
     confirmEditTemplate.remove();
   });
 
@@ -121,8 +118,8 @@ export function editConfirm(postId, text, author, book) {
 }
 
 export function deleteConfirm(postId) {
-  const confirmTemplate = document.createElement("div");
-  confirmTemplate.classList.add("confirm-style");
+  const confirmTemplate = document.createElement('div');
+  confirmTemplate.classList.add('confirm-style');
 
   const templateDel = `
   
@@ -133,15 +130,15 @@ export function deleteConfirm(postId) {
   `;
   confirmTemplate.innerHTML = templateDel;
 
-  const btnDeleteModal = confirmTemplate.querySelector("#buttonDelete");
-  btnDeleteModal.addEventListener("click", () => {
+  const btnDeleteModal = confirmTemplate.querySelector('#buttonDelete');
+  btnDeleteModal.addEventListener('click', () => {
     deletingPost(postId);
     document.querySelector(`#${postId}`).remove();
     confirmTemplate.remove();
   });
 
-  const btnCancelConfirm = confirmTemplate.querySelector("#cancelConf");
-  btnCancelConfirm.addEventListener("click", () => {
+  const btnCancelConfirm = confirmTemplate.querySelector('#cancelConf');
+  btnCancelConfirm.addEventListener('click', () => {
     confirmTemplate.remove();
   });
 
@@ -153,12 +150,12 @@ export function creatingPostTemplate(post) {
   let templatePosts = `
   <div class="eachPost">
     <div class="infos-user">
-      <time class="date-hour">${postData.date}</time>  
+      <time class="date-hour">${postData.date.toDate().toLocaleString('pt-br')}</time>  
       <img class="img-user-log" src=${postData.photoURL} referrerpolicy="no-referrer">
       <h3 class="name-user-log">${postData.displayName}</h3>
 
-      `
-    const secondTemplatePosts = `
+      `;
+  const secondTemplatePosts = `
       <img src='img\\edit.svg' class="editsvg updl" id="buttonEdit">
       <img src='img\\trash.svg' class="deletesvg updl" id="buttonDel"> `;
 
@@ -178,9 +175,9 @@ export function creatingPostTemplate(post) {
   
 `;
 
- if (postData.userId == auth.currentUser.uid) templatePosts = templatePosts.concat('', secondTemplatePosts);
+  if (postData.userId == auth.currentUser.uid) templatePosts = templatePosts.concat('', secondTemplatePosts);
 
- templatePosts = templatePosts.concat('', thirdTemplatePosts);
+  templatePosts = templatePosts.concat('', thirdTemplatePosts);
 
   return templatePosts;
 }

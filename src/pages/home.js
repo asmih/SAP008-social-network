@@ -1,4 +1,4 @@
-import { loginEmailPassword, initWithGoogle } from "../firebase-services/auth.js";
+import { loginEmailPassword, initWithGoogle } from '../firebase-services/auth.js';
 
 // Este es el punto de entrada de tu aplicacion
 export const homeFunction = () => {
@@ -33,25 +33,23 @@ export const homeFunction = () => {
   btnGoogle.addEventListener('click', () => {
     initWithGoogle().then(() => {
       window.location.hash = '#feed';
-    })
+    });
   });
-  
-  const btnLogin = container.querySelector('#buttonLogin')
-  
+
+  const btnLogin = container.querySelector('#buttonLogin');
+
   btnLogin.addEventListener('click', () => {
     const inputLoginEmail = container.querySelector('#loginEmail').value;
     const inputLoginPassword = container.querySelector('#loginPassword').value;
-      loginEmailPassword(inputLoginEmail, inputLoginPassword).then((result) => {
-        if (result) window.location.hash = '#feed';
-      });
-      
-  })
+    loginEmailPassword(inputLoginEmail, inputLoginPassword).then((result) => {
+      if (result) window.location.hash = '#feed';
+    });
+  });
 
   const buttonSignUp = container.querySelector('#buttonSignUp');
-    buttonSignUp.addEventListener('click', () => {
-      window.location.hash = '#signup';
-    });
+  buttonSignUp.addEventListener('click', () => {
+    window.location.hash = '#signup';
+  });
 
   return container;
 };
-
