@@ -2,20 +2,19 @@ import {
   gettingPost,
   deletingPost,
   editingPost,
-  } from "../firebase-services/firestore.js";
-import { auth, db } from "../firebase-services/firebase-config.js";
+} from '../firebase-services/firestore.js';
+import { auth, db } from '../firebase-services/firebase-config.js';
 import {
   doc,
   getDoc,
   updateDoc,
-} from "../firebase-services/exports.js";
+} from '../firebase-services/exports.js';
 
 export function postFunction(posts) {
   gettingPost().then((docs) => {
     for (const post of docs.docs) {
-      const postsCreating = document.createElement("div");
-      postsCreating.id = post.id
-      console.log(post.data().likes)
+      const postsCreating = document.createElement('div');
+      postsCreating.id = post.id;
       const templatePosts = creatingPostTemplate(post);
       postsCreating.innerHTML = templatePosts;
       posts.appendChild(postsCreating);
@@ -43,31 +42,28 @@ export function postFunction(posts) {
       });
       const btnLike = [...posts.querySelectorAll('.liked')];
       btnLike.forEach((element) => {
-        element.addEventListener('click',(event) => {
-          event.preventDefault()
+        element.addEventListener('click', (event) => {
+          event.preventDefault();
           const postId = event.target.parentNode.parentNode.id;
           const docRef = getDoc(doc(db, 'post', postId));
-          docRef.then((resp)=> {
-          const postData = resp.data();
-          if (postData.likes.includes(auth.currentUser.uid)){
-            const idIndex = postData.likes.indexOf(auth.currentUser.uid);
-            postData.likes.splice(idIndex, 1);
-            event.target.src = 'img//heart.svg'
-          } else {
-            postData.likes.push(auth.currentUser.uid)
-            event.target.src = 'img//heart-fill.svg'
-          }
-          updateDoc(doc(db, 'post', postId), {likes: postData.likes})
-          event.target.parentNode.getElementsByTagName("p")[0].innerHTML = postData.likes.length;
+          docRef.then((resp) => {
+            const postData = resp.data();
+            if (postData.likes.includes(auth.currentUser.uid)) {
+              const idIndex = postData.likes.indexOf(auth.currentUser.uid);
+              postData.likes.splice(idIndex, 1);
+              event.target.src = 'img//heart.svg';
+            } else {
+              postData.likes.push(auth.currentUser.uid);
+              event.target.src = 'img//heart-fill.svg';
+            }
+            updateDoc(doc(db, 'post', postId), { likes: postData.likes });
+            event.target.parentNode.getElementsByTagName('p')[0].innerHTML = postData.likes.length;
           });
         });
       });
-
-
     });
   });
 }
-
 
 export function editConfirm(postId, text, author, book) {
   const confirmEditTemplate = document.createElement('div');
