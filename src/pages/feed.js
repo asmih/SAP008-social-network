@@ -3,11 +3,10 @@ import { creatingPost } from '../firebase-services/firestore.js';
 import { postFunction, creatingPostTemplate, deleteConfirm } from './posts.js';
 import { getDoc } from '../firebase-services/exports.js';
 
-
 export const feedFunction = () => {
-  const containerFeed = document.createElement("section");
-  const posts = document.createElement("div");
-  posts.classList.add("post-style");
+  const containerFeed = document.createElement('section');
+  const posts = document.createElement('div');
+  posts.classList.add('post-style');
 
   const templateFeed = `
   
@@ -35,35 +34,34 @@ export const feedFunction = () => {
 
   containerFeed.innerHTML = templateFeed;
 
-  const btnLogOut = containerFeed.querySelector(".button-logout");
-  btnLogOut.addEventListener("click", () => {
+  const btnLogOut = containerFeed.querySelector('.button-logout');
+  btnLogOut.addEventListener('click', () => {
     userLogOut().then(() => {
-      window.location.hash = "#home";
+      window.location.hash = '#home';
     });
   });
 
-  const containerPost = containerFeed.querySelector("#containerPost");
+  const containerPost = containerFeed.querySelector('#containerPost');
   containerPost.appendChild(posts);
 
-  const btnPublish = containerFeed.querySelector(".button-publish");
-  btnPublish.addEventListener("click", (e) => {
-    const iptAuthor = containerFeed.querySelector("#inputAuthor").value;
-    const iptBook = containerFeed.querySelector("#inputBook").value;
-    const iptQuote = containerFeed.querySelector("#inputQuote").value;
+  const btnPublish = containerFeed.querySelector('.button-publish');
+  btnPublish.addEventListener('click', (e) => {
+    const iptAuthor = containerFeed.querySelector('#inputAuthor').value;
+    const iptBook = containerFeed.querySelector('#inputBook').value;
+    const iptQuote = containerFeed.querySelector('#inputQuote').value;
     e.preventDefault;
     creatingPost(iptQuote, iptAuthor, iptBook).then((post) => {
       getDoc(post).then((postSnap) => {
-      const newPost = document.createElement('div');
-      newPost.id = postSnap.id;
-      newPost.innerHTML = creatingPostTemplate(postSnap)
-      newPost.querySelector('.deletesvg').addEventListener('click', (event) => {
-        const postId = event.target.parentNode.parentNode.parentNode.id
-        document.body.appendChild(deleteConfirm(postId))
-      })
-      posts.insertBefore(newPost, posts.firstChild)
-      })
-      
-    })
+        const newPost = document.createElement('div');
+        newPost.id = postSnap.id;
+        newPost.innerHTML = creatingPostTemplate(postSnap);
+        newPost.querySelector('.deletesvg').addEventListener('click', (event) => {
+          const postId = event.target.parentNode.parentNode.parentNode.id;
+          document.body.appendChild(deleteConfirm(postId));
+        });
+        posts.insertBefore(newPost, posts.firstChild);
+      });
+    });
   });
 
   postFunction(posts);
