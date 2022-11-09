@@ -18,13 +18,13 @@ body{
   margin-top: 1rem;
   margin-bottom: 2rem;
   background-color: #fff;
-  width: 52rem;
+  width: 80%;
   height: 22rem;
   border-radius: 2rem;
 }
 
 .question-feed {
-  width: 46.5rem;
+  width: 70%;
   height: 14rem;
   background-color: #EDE2E2;
   border: none;
@@ -103,7 +103,6 @@ body{
 
 .container-post {
   width: 52.5rem;
-  margin-top: 2rem;
   margin: auto;
   background-color: #8ed1d0;
   border-radius: 2rem;
@@ -186,11 +185,5 @@ body{
 
   .input-space::-webkit-input-placeholder{
     font-size: 0.8rem;
-  }
-
-
-  
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+  } 
 }
