@@ -55,11 +55,6 @@
   align-items: center;
 }
 
- .user-reactions {
-  display: block;
-
- }
-
  .updl {
   margin-top: 2rem;
   justify-content: right;
@@ -84,12 +79,8 @@
   font-family: 'Quicksand', sans-serif;
  }
 
-
  .button-dlt, .button-update {
   background-color: #F2AE2D;
- }
- .button-dlt:hover, .button-update:hover {
-  background-color: #d3ae6a;
  }
 
  .buttons-post {
@@ -106,6 +97,10 @@
   height: 20%;
  }
 
+ .button-ccl, .button-update-cancel {
+  background-color: rgba(79, 86, 86, 0.219);
+ }
+
  .button-update, .button-update-cancel {
   margin-left: 8rem;
   margin-top: 4rem;
@@ -113,10 +108,11 @@
   width: 20%;
   height: 10%;
  }
- 
- .button-ccl, .button-update-cancel {
-  background-color: rgba(79, 86, 86, 0.219);
+
+ .button-dlt:hover, .button-update:hover {
+  background-color: #d3ae6a;
  }
+ 
  .button-ccl:hover, .button-update-cancel:hover{
   background-color: rgba(135, 141, 141, 0.219);
  }
@@ -173,7 +169,7 @@
   height: 2rem;
 } 
 
- @media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   
   .eachPost{
     width: 28.5rem;
