@@ -45,11 +45,10 @@ export const feedFunction = () => {
   containerPost.appendChild(posts);
 
   const btnPublish = containerFeed.querySelector('.button-publish');
-  btnPublish.addEventListener('click', (e) => {
+  btnPublish.addEventListener('click', () => {
     const iptAuthor = containerFeed.querySelector('#inputAuthor').value;
     const iptBook = containerFeed.querySelector('#inputBook').value;
     const iptQuote = containerFeed.querySelector('#inputQuote').value;
-    e.preventDefault;
     creatingPost(iptQuote, iptAuthor, iptBook).then((post) => {
       getDoc(post).then((postSnap) => {
         const newPost = document.createElement('div');

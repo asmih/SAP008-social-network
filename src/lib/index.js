@@ -19,6 +19,8 @@ const pageChanges = () => {
     case '#feed':
       body.appendChild(feedFunction());
       break;
+    default:
+      body.appendChild(homeFunction());
   }
 };
 const init = () => {

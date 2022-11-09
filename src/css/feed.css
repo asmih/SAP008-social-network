@@ -103,7 +103,6 @@ body{
 
 .container-post {
   width: 52.5rem;
-  margin-top: 2rem;
   margin: auto;
   background-color: #8ed1d0;
   border-radius: 2rem;
@@ -186,11 +185,5 @@ body{
 
   .input-space::-webkit-input-placeholder{
     font-size: 0.8rem;
-  }
-
-
-  
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+  } 
 }

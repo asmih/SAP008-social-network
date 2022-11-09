@@ -6,9 +6,9 @@ export {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   GoogleAuthProvider,
-} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'; //eslint-disable-line
 
-export { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
+export { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js'; //eslint-disable-line
 
 export {
   getFirestore,
@@ -23,4 +23,4 @@ export {
   deleteDoc,
   updateDoc,
   getDoc,
-} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
+} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js'; //eslint-disable-line

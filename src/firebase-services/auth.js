@@ -30,8 +30,6 @@ export function createNewUser(name, email, password) {
 
 export function loginEmailPassword(email, password) {
   return signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      return true;
-    }).catch((e) => false);
+    .then(() => true)
+    .catch(() => false);
 }
