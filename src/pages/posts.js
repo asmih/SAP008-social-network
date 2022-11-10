@@ -34,8 +34,8 @@ export function creatingPostTemplate(post) {
   <div class="user-reactions">
       <img src= ${postData.likes.length > 0 ? 'img//heart-fill.svg' : 'img\\heart.svg'} class='reactions liked'>
       <p>${postData.likes.length}</p>
-      <img src='img\\book-open.svg' class='reactions read'>
-      <img src='img\\bookmark.svg' class='reactions toread want-read'>
+      <img src='img//book-open.svg' class='reactions read'>
+      <img src='img//bookmark.svg' class='reactions toread want-read'>
   </div>
   
 `;
@@ -75,13 +75,13 @@ export function deleteConfirm(postId) {
   return confirmTemplate;
 }
 
-export function editConfirm(postId, text, author, book) {
+export function editConfirm(postId, post, author, book) {
   const confirmEditTemplate = document.createElement('div');
   confirmEditTemplate.classList.add('edit-style');
 
   const templateEdit = `
       <textarea class='edit-post-ipt'>
-        ${text}
+        ${post}
       </textarea>
         <div class='inputs-edit-source'>
           <input type='text' class='author-updt edit-post' id="updtAuthor" value="${author}">
@@ -102,7 +102,8 @@ export function editConfirm(postId, text, author, book) {
     const updatedAuthor = confirmEditTemplate.querySelector('.author-updt');
     const updatedBook = confirmEditTemplate.querySelector('.book-updt');
     const postData = {};
-    if (text !== updatedText) postData.text = updatedText.value;
+    if (post !== updatedText) postData.post = updatedText.value;
+    console.log(updatedText);
     if (author !== updatedAuthor) postData.author = updatedAuthor.value;
     if (book !== updatedBook) postData.book = updatedBook.value;
     editingPost(postId, postData);
@@ -110,6 +111,7 @@ export function editConfirm(postId, text, author, book) {
     const postDiv = document.getElementById(postId);
     const quote = postDiv.querySelector('.quote-posted');
     quote.innerHTML = updatedText.value;
+    console.log(updatedText);
     postDiv.querySelector('.author-name-log').innerHTML = `${updatedAuthor.value}, ${updatedBook.value}`;
     confirmEditTemplate.remove();
   });
@@ -146,11 +148,13 @@ export function postFunction(posts) {
         const postId = event.target.parentNode.parentNode.parentNode.id;
         const elementTarget = event.target.parentNode.parentNode;
         const oldText = elementTarget.querySelector('.quote-posted').innerText;
+        console.log(oldText);
         const oldAuthorBook = elementTarget.querySelector('.author-name-log').innerText.split(',');
         document.body.appendChild(
           editConfirm(postId, oldText, oldAuthorBook[0], oldAuthorBook[1]),
         );
       });
+
       const btnLike = [...posts.querySelectorAll('.liked')];
       btnLike.forEach((elementLike) => {
         elementLike.addEventListener('click', (event) => {
