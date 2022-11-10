@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body{
+  background-color: #ABD9D8;
+}
+
+.form-feed {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  width: 52rem;
+  height: 22rem;
+  border-radius: 2rem;
+}
+
+.question-feed {
+  width: 46.5rem;
+  height: 14rem;
+  background-color: #EDE2E2;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.author, .book {
+  background-color: #F2CC84;
+  width: 40%;
+  height: 10%;
+  border-radius: 0.5rem;
+  border: none;
+  margin-top: 0.5rem;
+} 
+
+.inputs-source {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.6rem;
+  gap: 10px;
+}
+
+.input-space {
+  width: 23rem;
+  height: 2rem;
+}
+
+
+
+.btnFeed {
+  border-radius: 2rem;
+  background-color: #d5a374;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  padding: 0rem 0.5rem;
+}
+
+.btnFeed:hover {
+    background-color: #ffcc98;
+}
+
+.button-logout {
+  display: flex;
+  width: 5rem;
+  height: 2rem;
+  padding: .2rem 1.6rem;
+  background-color: #a9a9a9;
+}
+
+.button-logout:hover{
+  background-color: #c4c4c4;
+}
+
+.button-publish {
+  width: 7rem;
+  height: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1.4rem;
+  padding-top: 0.4rem;
+}
+
+
+.ipt-general::-webkit-input-placeholder {
+  padding-left: 0.7rem;
+}
+
+.question-feed::-webkit-input-placeholder {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+.container-post {
+  width: 52.5rem;
+  margin: auto;
+  background-color: #8ed1d0;
+  border-radius: 2rem;
+}
+
+.publish-logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1rem;
+  margin-right: 3rem;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  
+  .form-feed {
+    width: 30rem;
+    height: 18rem;
+    padding: 0.7rem;
+  }
+  
+  .question-feed {
+    width: 27rem;
+    height: 10rem;
+    padding: 1rem;
+  }
+
+  .author, .book {
+    width: 70%;
+    height: 20%;
+  }   
+
+  .btnFeed {
+    font-size: 0.7rem;
+  }
+
+  .ipt-general::-webkit-input-placeholder {
+    padding-left: 0.5rem;
+    margin-top: 4rem;
+    font-size: 0.5rem;
+  } 
+  
+  .feed-page {
+    background:transparent;
+  }
+
+  .container-post {
+    width: 30rem;
+  }
+
+  .button-logout {
+    width: 2rem;
+    padding-right: 3rem;
+  }
+
+  .button-publish {
+    width: 5rem;
+    padding-right: 1rem;
+    padding-top: 0.4rem;
+  }
+
+  .input-space{
+    width: 12rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .inputs-source{
+    justify-content: center;
+
+  }
+
+  .question-feed::-webkit-input-placeholder{
+    font-size: 1rem;
+  }
+
+  .input-space::-webkit-input-placeholder{
+    font-size: 0.8rem;
+  } 
+}

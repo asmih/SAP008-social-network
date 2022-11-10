@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+.post-style {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.eachPost{
+  display: flex;
+  margin-left: 1.1rem;
+  margin-top: 1rem;
+  width: 50.5rem;
+  align-items: center;
+  background-color: #D7ECEB;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.infos-user {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.img-user-log {
+  border-radius: 3rem;
+  margin-top: 1rem;
+}
+.name-user-log, .quote-posted, .author-name-log {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.name-user-log {
+  font-weight: bolder;
+}
+
+.quote-posted {
+  font-size: 14px;
+  margin-left: 2rem;
+}
+
+
+.author-name-log {
+  font-weight: bold;
+  font-size: 13px;
+  padding-top: 1rem;
+  margin-left: 21rem;
+  border-bottom: 2px solid #F2AE2D;
+}
+
+.date-hour {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  align-items: center;
+}
+
+ .updl {
+  margin-top: 2rem;
+  justify-content: right;
+  cursor: pointer;
+ }
+
+
+ .user-reactions{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 4rem;
+    padding-top: 0.5rem;
+    gap: 9px;
+ }
+
+
+ .confirm-paragraph {
+  padding-top: 2rem;
+  margin-left: 0.5rem;
+  font-size: 15px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+ }
+
+ .button-dlt, .button-update {
+  background-color: #F2AE2D;
+ }
+
+ .buttons-post {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border: none;
+  border-radius: 1rem;
+ }
+
+ .button-dlt, .button-ccl {
+  margin-left: 3.5rem;
+  margin-top: 2rem;
+  width: 30%;
+  height: 20%;
+ }
+
+ .button-ccl, .button-update-cancel {
+  background-color: rgba(79, 86, 86, 0.219);
+ }
+
+ .button-update, .button-update-cancel {
+  margin-left: 8rem;
+  margin-top: 4rem;
+  padding: 0.5rem;
+  width: 20%;
+  height: 10%;
+ }
+
+ .button-dlt:hover, .button-update:hover {
+  background-color: #d3ae6a;
+ }
+ 
+ .button-ccl:hover, .button-update-cancel:hover{
+  background-color: rgba(135, 141, 141, 0.219);
+ }
+
+ .confirm-style {
+  width: 25rem;
+  height: 8rem;
+  justify-items: center;
+  background-color: #a8dedd;
+  border-radius: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+ }
+
+ .edit-style {
+  justify-content: center;
+  background-color: #a8dedd;
+  width: 48rem;
+  height: 24rem;
+  position: fixed;
+  border-radius: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+
+ .edit-post-ipt {
+  width: 46rem;
+  height: 10rem;
+  background-color: #EDE2E2;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.inputs-edit-source {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.6rem;
+  gap: 10px;
+}
+
+.author-updt, .book-updt {
+  background-color: #F2CC84;
+  border-radius: 0.5rem;
+  border: none;
+  width: 23rem;
+  height: 2rem;
+} 
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  
+  .eachPost{
+    width: 28.5rem;
+  }
+
+  .name-user-log, .quote-posted, .author-name-log {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+  }
+
+  .quote-posted {
+    display: flex;
+    font-size: 12px;
+    margin-left: 2rem;
+
+ }
+
+ .author-name-log {
+    margin-left: 5rem;
+ }
+
+.edit-style{
+    width: 30rem;
+    height: 18rem;
+    padding: 0.7rem;
+  }
+  
+  .edit-post-ipt {
+    width: 24rem;
+    height: 8rem;
+    padding: 1rem;
+  }
+
+  .button-update, .button-update-cancel {
+    margin-top: 0.5rem;
+    margin-left: 6rem;
+  }
+} 
