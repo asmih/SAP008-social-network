@@ -14,17 +14,16 @@
 
 ## 1. Introdução
 
-Neste 3º projeto da turma 008 da Laboratória, trabalhamos com a criação de uma rede social utilizando Firebase.
+Neste 3º projeto da turma 008 da Laboratória, trabalhamos com a criação de uma rede social utilizando Firebase.<br>
 Projeto feito em colaboração entre @rayannepinto, @AlanaK2 e @as_mih.
 
 ## 2. Resumo do projeto
 
-A importancia da [representatividade feminina na literatura]
-(https://www.blogdaletramento.com.br/2020/03/a-importancia-da-representatividade-da.html?m=0)
-Segundo uma pesquisa realizada pelo Grupo de Estudos em Literatura Brasileira Contemporânea, um coletivo de pesquisadores vinculado à Universidade de Brasília (UNB), mais de 70% dos livros publicados por grandes editoras brasileiras, entre 1965 e 2014, foram escritos por homens. 
+[A representatividade feminina na literatura](https://www.blogdaletramento.com.br/2020/03/a-importancia-da-representatividade-da.html?m=0)<br>
+Segundo uma pesquisa realizada pelo Grupo de Estudos em Literatura Brasileira Contemporânea, um coletivo de pesquisadores vinculado à Universidade de Brasília (UNB), mais de 70% dos livros publicados por grandes editoras brasileiras, entre 1965 e 2014, foram escritos por homens.<br>
 Em contrapartida, erca de 59% dos leitores brasileiros são mulheres segundo a quarta edição da pesquisa Retratos da Literatura realizada em 2016.
 
-Por isso, criamos a [Booknotes], uma rede social que te a proposta de permitir que os usuários compartilhem trechos de livros escritos por mulheres.
+Por isso, criamos a [Booknotes](https://asmih.github.io/SAP008-social-network/), uma rede social que te a proposta de permitir que os usuários compartilhem trechos de livros escritos por mulheres.
 
 
 Nossa Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
