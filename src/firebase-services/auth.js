@@ -27,7 +27,7 @@ export function userLogOut() {
 export function createNewUser(name, email, password) {
   return createUserWithEmailAndPassword(auth, email, password)
     .then(() => true)
-    .catch(()=> false);
+    .catch(() => false);
 }
 
 export function loginEmailPassword(email, password) {
