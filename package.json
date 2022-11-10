@@ -15,6 +15,7 @@
     "stylelint": "stylelint --aei src/**/*.css",
     "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage",
+    "deploy": "gh-pages -d src",
     "start": "serve -s src/"
   },
   "devDependencies": {
@@ -37,6 +38,7 @@
     "node": ">=16.x"
   },
   "dependencies": {
-    "firebase": "^9.10.0"
+    "firebase": "^9.10.0",
+    "gh-pages": "^4.0.0"
   }
 }
