@@ -103,7 +103,6 @@ export function editConfirm(postId, post, author, book) {
     const updatedBook = confirmEditTemplate.querySelector('.book-updt');
     const postData = {};
     if (post !== updatedText) postData.post = updatedText.value;
-    console.log(updatedText);
     if (author !== updatedAuthor) postData.author = updatedAuthor.value;
     if (book !== updatedBook) postData.book = updatedBook.value;
     editingPost(postId, postData);
@@ -111,7 +110,6 @@ export function editConfirm(postId, post, author, book) {
     const postDiv = document.getElementById(postId);
     const quote = postDiv.querySelector('.quote-posted');
     quote.innerHTML = updatedText.value;
-    console.log(updatedText);
     postDiv.querySelector('.author-name-log').innerHTML = `${updatedAuthor.value}, ${updatedBook.value}`;
     confirmEditTemplate.remove();
   });
@@ -148,7 +146,6 @@ export function postFunction(posts) {
         const postId = event.target.parentNode.parentNode.parentNode.id;
         const elementTarget = event.target.parentNode.parentNode;
         const oldText = elementTarget.querySelector('.quote-posted').innerText;
-        console.log(oldText);
         const oldAuthorBook = elementTarget.querySelector('.author-name-log').innerText.split(',');
         document.body.appendChild(
           editConfirm(postId, oldText, oldAuthorBook[0], oldAuthorBook[1]),

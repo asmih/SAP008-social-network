@@ -42,7 +42,7 @@ export const signUpFunction = () => {
 
   const btnBackHome = containerSignUp.querySelector('#backAtHome');
   btnBackHome.addEventListener('click', () => {
-    window.location.assign('https://asmih.github.io/SAP008-social-network/#home');
+    window.location.assign('/');
   });
 
   return containerSignUp;
