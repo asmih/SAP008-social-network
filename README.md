@@ -38,4 +38,36 @@ qual seja possível **ler e escrever dados**.
 
 ## 3. Planejamento
 
+![Captura de tela de 2022-11-10 15-56-13](https://user-images.githubusercontent.com/57406239/201182387-2c336c58-d013-491a-bd79-cf427d5a7043.png)
+
+
+## 4. Histórias de usuario
+
+![1](https://user-images.githubusercontent.com/57406239/201183586-098d6a02-088b-4e52-827f-55d4d814260e.png)
+![2](https://user-images.githubusercontent.com/57406239/201184032-10d9b887-8672-4641-b009-a98031bd263d.png)
+![3](https://user-images.githubusercontent.com/57406239/201184048-44b90adb-4105-4371-8c70-906306c06e68.png)
+![4](https://user-images.githubusercontent.com/57406239/201184060-1b309906-ceab-4222-909b-dde3156e51ad.png)
+![5](https://user-images.githubusercontent.com/57406239/201184073-9ad65e48-43c9-4692-8717-863deeb46f94.png)
+
+
+## 5. Prototipo
+
+![paleta](https://user-images.githubusercontent.com/57406239/201185975-ee3fa76f-5767-4c13-8ae1-775fb2ad23d7.png)
+
+![desk1](https://user-images.githubusercontent.com/57406239/201185128-e5716fab-bb9c-4bc5-a110-150b354b7427.png)
+![mobile1](https://user-images.githubusercontent.com/57406239/201185140-7b282578-c917-4414-9c48-4a81328abc7a.png)
+![desk2](https://user-images.githubusercontent.com/57406239/201185151-0e9d5fbd-4793-478c-ba21-55fffbf8d73b.png)
+![mobile2](https://user-images.githubusercontent.com/57406239/201185160-2b6a0a26-4d2a-4a84-baa7-879e31e04c24.png)
+![desk3](https://user-images.githubusercontent.com/57406239/201185174-73f5f244-3223-47d4-96fd-643953a52c5a.png)
+![mobile3](https://user-images.githubusercontent.com/57406239/201185195-4fdc1b42-c8c5-4088-b6eb-8b8c9d56df22.png)
+
+## 6. Resultado
+
+https://asmih.github.io/SAP008-social-network/
+
+## 7. Ferramentas utilizadas
+
+Notion, Figma, GoogleForms, Vs Code, Firebase Auth, Cloud Firestore <br>
+Linguagens: HTML5, CSS3, Javascript.
+
 
