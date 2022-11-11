@@ -34,8 +34,6 @@ export function creatingPostTemplate(post) {
   <div class="user-reactions">
       <img src= ${postData.likes.length > 0 ? 'img//heart-fill.svg' : 'img//heart.svg'} class='reactions liked'>
       <p>${postData.likes.length}</p>
-      <img src='img//book-open.svg' class='reactions read'>
-      <img src='img//bookmark.svg' class='reactions toread want-read'>
   </div>
   
 `;
