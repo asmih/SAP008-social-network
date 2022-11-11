@@ -6,6 +6,7 @@ export const createUserWithEmailAndPassword = jest.fn();
 export const onAuthStateChanged = jest.fn();
 export const GoogleAuthProvider = jest.fn();
 export const signOut = jest.fn();
+export const userLogOut = jest.fn();
 
 export const getFirestore = jest.fn();
 export const collection = jest.fn();

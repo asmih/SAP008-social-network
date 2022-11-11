@@ -1,6 +1,8 @@
 import { userLogOut } from '../firebase-services/auth.js';
 import { creatingPost } from '../firebase-services/firestore.js';
-import { postFunction, creatingPostTemplate, deleteConfirm } from './posts.js';
+import {
+  postFunction, creatingPostTemplate, deleteConfirm, editConfirm,
+} from './posts.js';
 import { getDoc } from '../firebase-services/exports.js';
 
 export const feedFunction = () => {
@@ -57,6 +59,14 @@ export const feedFunction = () => {
         newPost.querySelector('.deletesvg').addEventListener('click', (event) => {
           const postId = event.target.parentNode.parentNode.parentNode.id;
           document.body.appendChild(deleteConfirm(postId));
+        });
+        newPost.querySelector('.editsvg').addEventListener('click', (event) => {
+          const postId = event.target.parentNode.parentNode.parentNode.id;
+          document.body.appendChild(editConfirm(postId, iptQuote, iptAuthor, iptBook));
+        });
+        newPost.querySelector('liked.svg').addEventListener('click', (event) => {
+          const postId = event.target.parentNode.parentNode.parentNode.id;
+          document.body.appendChild(editConfirm(postId, iptQuote, iptAuthor, iptBook));
         });
         posts.insertBefore(newPost, posts.firstChild);
       });
