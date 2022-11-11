@@ -65,6 +65,3 @@ describe('creatingPost', () => {
     expect(addDoc).toHaveBeenCalledTimes(1);
   });
 });
-
-
-
