@@ -27,7 +27,8 @@ export function userLogOut() {
 
 export function createNewUser(name, email, password) {
   return createUserWithEmailAndPassword(auth, email, password)
-    .then(() => updateProfile(auth.currentUser, { displayName: name }))
+    .then(() => updateProfile(auth.currentUser, { displayName: name })
+      .then().catch((error) => (error)))
     .catch((error) => (error));
 }
 
