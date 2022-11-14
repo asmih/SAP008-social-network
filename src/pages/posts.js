@@ -16,7 +16,7 @@ export function creatingPostTemplate(post) {
   <div class="eachPost">
     <div class="infos-user">
       <time class="date-hour">${postData.date.toDate().toLocaleString('pt-br')}</time>  
-      <img class="img-user-log" src=${postData.photoURL} referrerpolicy="no-referrer">
+      <img class="img-user-log" src=${postData.photoURL !== null ? postData.photoURL : 'img//profile.png'} referrerpolicy="no-referrer">
       <h3 class="name-user-log">${postData.displayName}</h3>
 
       `;
