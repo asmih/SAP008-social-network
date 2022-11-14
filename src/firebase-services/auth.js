@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-  GoogleAuthProvider,
+  GoogleAuthProvider, updateProfile,
 } from './exports.js';
 import { auth } from './firebase-config.js';
 
@@ -26,7 +26,10 @@ export function userLogOut() {
 }
 
 export function createNewUser(name, email, password) {
-  return createUserWithEmailAndPassword(auth, email, password);
+  return createUserWithEmailAndPassword(auth, email, password)
+  .then(()=> updateProfile(auth.currentUser, {displayName: name}).then(res => console.log(res)))
+  .catch((error) => console.log(error));
+  
 }
 
 export function loginEmailPassword(email, password) {
