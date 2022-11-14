@@ -1,6 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
 // importamos la funcion que vamos a testear
 import {
-  initWithGoogle, createNewUser, loginEmailPassword, userLogOut,
+  initWithGoogle, createNewUser, loginEmailPassword, userLogOut, handleStateChanged,
 } from '../src/firebase-services/auth.js';
 import {
   creatingPost, deletingPost, editingPost,
@@ -35,6 +38,20 @@ describe('loginEmailPassword', () => {
   it('a função deve possibilitar fazer login com email e senha', () => {
     loginEmailPassword();
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('handleStateChanged', () => {
+  it('se o usuario não é nulo a função deve ir para a pagina do feed', () => {
+    const user = { currentUser: {} };
+    handleStateChanged(user);
+    expect(window.location.hash).toBe('#feed');
+  });
+  it('se o usuario é nulo a função deve permanecer na mesma pagina', () => {
+    const user = null;
+    window.location.hash = '#homePage';
+    handleStateChanged(user);
+    expect(window.location.hash).toBe('#homePage');
   });
 });
 

@@ -7,9 +7,10 @@ import {
 } from './exports.js';
 import { auth } from './firebase-config.js';
 
-onAuthStateChanged(auth, (user) => {
+export const handleStateChanged = (user) => {
   if (user) window.location.hash = '#feed';
-});
+};
+onAuthStateChanged(auth, handleStateChanged);
 
 export function current() {
   return auth.currentUser;
