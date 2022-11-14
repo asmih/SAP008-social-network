@@ -3,13 +3,14 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-  GoogleAuthProvider,
+  GoogleAuthProvider, updateProfile,
 } from './exports.js';
 import { auth } from './firebase-config.js';
 
-onAuthStateChanged(auth, (user) => {
+export const handleStateChanged = (user) => {
   if (user) window.location.hash = '#feed';
-});
+};
+onAuthStateChanged(auth, handleStateChanged);
 
 export function current() {
   return auth.currentUser;
@@ -25,7 +26,9 @@ export function userLogOut() {
 }
 
 export function createNewUser(name, email, password) {
-  return createUserWithEmailAndPassword(auth, email, password);
+  return createUserWithEmailAndPassword(auth, email, password)
+    .then(() => updateProfile(auth.currentUser, { displayName: name }))
+    .catch((error) => (error));
 }
 
 export function loginEmailPassword(email, password) {

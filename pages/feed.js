@@ -64,10 +64,6 @@ export const feedFunction = () => {
           const postId = event.target.parentNode.parentNode.parentNode.id;
           document.body.appendChild(editConfirm(postId, iptQuote, iptAuthor, iptBook));
         });
-        newPost.querySelector('liked.svg').addEventListener('click', (event) => {
-          const postId = event.target.parentNode.parentNode.parentNode.id;
-          document.body.appendChild(editConfirm(postId, iptQuote, iptAuthor, iptBook));
-        });
         posts.insertBefore(newPost, posts.firstChild);
       });
     });
