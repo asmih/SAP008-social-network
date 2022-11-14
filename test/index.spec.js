@@ -6,7 +6,7 @@ import {
   initWithGoogle, createNewUser, loginEmailPassword, userLogOut, handleStateChanged,
 } from '../src/firebase-services/auth.js';
 import {
-  creatingPost, deletingPost, editingPost,
+  creatingPost, deletingPost, editingPost, gettingPost,
 } from '../src/firebase-services/firestore.js';
 import {
   signInWithPopup,
@@ -15,7 +15,7 @@ import {
   updateDoc,
   deleteDoc,
   addDoc,
-  signOut,
+  signOut, getDocs,
 } from '../src/firebase-services/exports.js';
 
 jest.mock('../src/firebase-services/exports.js');
@@ -28,8 +28,9 @@ describe('initWithGoogle', () => {
 });
 
 describe('createNewUser', () => {
-  it('a função deve possibilitar criar um novo usuario com email e senha', () => {
-    createNewUser();
+  it('a função deve possibilitar criar um novo usuario com email e senha', async () => {
+    createUserWithEmailAndPassword.mockResolvedValue({});
+    await createNewUser();
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });
@@ -80,5 +81,12 @@ describe('creatingPost', () => {
   it('a função deve possibilitar criar um post', () => {
     creatingPost();
     expect(addDoc).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('gettingPost', () => {
+  it('a função deve possibilitar pegar um post', () => {
+    gettingPost();
+    expect(getDocs).toHaveBeenCalledTimes(1);
   });
 });
