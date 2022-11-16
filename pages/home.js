@@ -1,11 +1,10 @@
 import { loginEmailPassword, initWithGoogle } from '../firebase-services/auth.js';
 
-// Este es el punto de entrada de tu aplicacion
 export const homeFunction = () => {
   const container = document.createElement('section');
 
   const templateLogin = `
-<section class='home-page'>
+    <section class='home-page'>
       <div class='background-home'> 
         <p class='background-home quote'>
           “Sempre fomos o que os homens disseram que nós éramos. Agora somos nós

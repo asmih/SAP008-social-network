@@ -14,8 +14,6 @@ export function creatingPost(text, author, book) {
     date: new Date(),
     userId: current().uid,
     likes: [],
-    read: [],
-    toRead: [],
   });
 }
 

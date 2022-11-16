@@ -73,8 +73,7 @@ export function deleteConfirm(postId) {
   return confirmTemplate;
 }
 
-// editConfirm(abacate, mamao, banana, limao)
-//
+
 export function editConfirm(postId, post, author, book) {
   const confirmEditTemplate = document.createElement('div');
   confirmEditTemplate.classList.add('edit-style');

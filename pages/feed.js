@@ -12,26 +12,26 @@ export const feedFunction = () => {
 
   const templateFeed = `
   
-  <section class='feed-page'>
-    <div class='form-feed'>
-      <div class='inputs-feed'>
-        <textarea class='question-feed ipt-general' type='text' id="inputQuote" wrap="harder" placeholder='Qual trecho você gostaria de compartilhar hoje?' /></textarea>
-        <div class='inputs-source'>
-          <input type='text' class='author input-space ipt-general' id="inputAuthor" placeholder='Autora' />
-          <input type='text' class='book input-space ipt-general' id="inputBook" placeholder='Livro'/>
+    <section class='feed-page'>
+      <div class='form-feed'>
+        <div class='inputs-feed'>
+          <textarea class='question-feed ipt-general' type='text' id="inputQuote" wrap="harder" placeholder='Qual trecho você gostaria de compartilhar hoje?' /></textarea>
+          <div class='inputs-source'>
+            <input type='text' class='author input-space ipt-general' id="inputAuthor" placeholder='Autora' />
+            <input type='text' class='book input-space ipt-general' id="inputBook" placeholder='Livro'/>
+          </div>
+        <div class='publish-logout'>
+          <button type='submit' class='button-publish btnFeed'>Publicar</button>
+          <button type='submit' class='button-logout btnFeed'>Sair</button>
         </div>
-      <div class='publish-logout'>
-        <button type='submit' class='button-publish btnFeed'>Publicar</button>
-        <button type='submit' class='button-logout btnFeed'>Sair</button>
+        </div>
+        </div>
       </div>
-      </div>
-      </div>
-    </div>
-    
-  </section>
+      
+    </section>
   
-  <section class="container-post" id="containerPost">
-  </section>
+    <section class="container-post" id="containerPost">
+    </section>
   `;
 
   containerFeed.innerHTML = templateFeed;
@@ -51,7 +51,9 @@ export const feedFunction = () => {
     const iptAuthor = containerFeed.querySelector('#inputAuthor').value;
     const iptBook = containerFeed.querySelector('#inputBook').value;
     const iptQuote = containerFeed.querySelector('#inputQuote').value;
-    creatingPost(iptQuote, iptAuthor, iptBook).then((post) => {
+
+    creatingPost(iptQuote, iptAuthor, iptBook)
+    .then((post) => {
       getDoc(post).then((postSnap) => {
         const newPost = document.createElement('div');
         newPost.id = postSnap.id;
@@ -60,6 +62,7 @@ export const feedFunction = () => {
           const postId = event.target.parentNode.parentNode.parentNode.id;
           document.body.appendChild(deleteConfirm(postId));
         });
+
         newPost.querySelector('.editsvg').addEventListener('click', (event) => {
           const postId = event.target.parentNode.parentNode.parentNode.id;
           document.body.appendChild(editConfirm(postId, iptQuote, iptAuthor, iptBook));

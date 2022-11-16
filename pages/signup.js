@@ -3,7 +3,7 @@ import { createNewUser } from '../firebase-services/auth.js';
 export const signUpFunction = () => {
   const containerSignUp = document.createElement('section');
   const templateSignUp = `
-  <section class='signup-page' id='sign-up'>
+    <section class='signup-page' id='sign-up'>
       <div class='background-home'> 
         <p class='background-home quote'>
           “Sempre fomos o que os homens disseram que nós éramos. Agora somos nós
@@ -24,7 +24,7 @@ export const signUpFunction = () => {
         <button type='submit' class='button-signup' id='buttonSignUp'>Cadastrar e entrar!</button>
         <button type='submit' class='button-back-home' id='backAtHome'>Voltar</button>
       </div>
-  </section>   
+    </section>   
    
   `;
   containerSignUp.innerHTML = templateSignUp;
@@ -42,7 +42,7 @@ export const signUpFunction = () => {
 
   const btnBackHome = containerSignUp.querySelector('#backAtHome');
   btnBackHome.addEventListener('click', () => {
-    window.location.assign('/');
+    window.location.hash = '#home';
   });
 
   return containerSignUp;
